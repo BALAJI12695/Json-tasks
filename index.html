@@ -7,6 +7,23 @@
 
 
     <h2>Selecting Elements from Array</h2>
+    
+
+    <table border="1px" >
+      <thead>
+          <tr> 
+              <th rowspan="2">Name</th>
+              <th colspan="4">Marks</th>
+          </tr>
+          <tr>
+              <th>Math</th>
+              <th>English</th>
+              <th>Chemistry</th>
+              <th>Physics</th>
+          </tr>
+      </thead>
+      <tbody id="body"></tbody>
+    </table>
 
 
     <script>
@@ -58,19 +75,40 @@
     }
   ]
 
-  for(i=0;i<=results.length;i++)
-  {
-    document.write(results[i].name,"<br>")
-  
 
-  for(key in results[i].marks) 
+  var body=document.getElementById("body")
+         var a=""
+         var a="";
+        for(let i=0;i<results.length;i++)
+        {
+          a+="<tr>"
+            a+="<td>"+results[i].name+"</td>";
+            a+="<td>"+results[i]['marks'].math+"</td>";
+            a+="<td>"+results[i]['marks'].english+"</td>";
+            a+="<td>"+results[i]['marks'].chemistry+"</td>";
+            a+="<td>"+results[i]['marks'].physics+"</td>";
+          a+="</tr>"
+        }
+        body.innerHTML=a;
 
-  document.write(results[i].marks[key],"<br>")
+
+  // for(i=0;i<=results.length;i++)
+  // {
+  //   document.write(results[i].name)
+    
   
-  }
+  // for(key in results[i].marks) 
+
+  // document.write(results[i].marks[key],"")
+  
+  // }
    
-
     </script>
+
+
+
+
+
 </head>
 <body>
    
