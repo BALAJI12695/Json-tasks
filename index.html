@@ -105,11 +105,16 @@
    
     </script>
 
-<h1>Json A-Z  Z-A</h1>
+<h2>Json A-Z  Z-A</h2>
+
+
+<h2>Json Output</h2>
+
+<p id="demo"></p>
 
 <script>
 
-{
+ var result = `{
   "page": 2,
   "per_page": 6,
   "total": 12,
@@ -162,7 +167,33 @@
       "url": "https://reqres.in/#support-heading",
       "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
   }
-}
+}`
+
+
+// result = JSON.parse(result);
+
+// console.log(result)
+
+
+let obj=JSON.parse(result);
+var a = "";
+       a+=obj.page+"<br>";
+           a+=obj.per_page+"<br>";
+           a+=obj.total+"<br>";
+           a+=obj.total_pages+"<br>";
+      // for(j=0;j<obj.length;j++){
+      //   a+=obj[j]+"<br>"
+      // }
+      
+      for(i=0;i<obj.data.length;i++) {
+        for(let key in obj.data[i]){
+          a+=obj.data[i][key]+"<br>";
+        }
+      }
+      a+=obj.support.url+"<br>";
+           a+=obj.support.text+"<br>";
+      document.getElementById('demo').innerHTML=a;
+
 </script>
 
 
